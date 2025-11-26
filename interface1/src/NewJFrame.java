@@ -82,7 +82,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         message.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         message.setText("choisissez une réponse");
-        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 350, 50));
+        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 350, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
