@@ -9,7 +9,6 @@
  */
 public class NewJFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewJFrame.class.getName());
 
     /**
      * Creates new form NewJFrame
@@ -39,11 +38,13 @@ public class NewJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        question.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        question.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         question.setForeground(new java.awt.Color(255, 0, 0));
+        question.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         question.setText("quelle est la capitale de l'indonésie ?");
-        getContentPane().add(question, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 300, -1));
+        getContentPane().add(question, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 380, -1));
 
+        reponse1.setBackground(new java.awt.Color(51, 255, 0));
         reponse1.setText("Bali");
         reponse1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,6 +53,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(reponse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 148, -1));
 
+        reponse2.setBackground(new java.awt.Color(0, 204, 204));
         reponse2.setText("kuala lumpur");
         reponse2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,6 +62,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(reponse2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 140, -1));
 
+        reponse3.setBackground(new java.awt.Color(255, 0, 51));
         reponse3.setText("singapour");
         reponse3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +71,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(reponse3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, -1));
 
+        reponse4.setBackground(new java.awt.Color(255, 255, 0));
         reponse4.setText("nusantara");
         reponse4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,81 +80,161 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(reponse4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 140, -1));
 
-        message.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        message.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         message.setText("choisissez une réponse");
-        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 220, -1));
+        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 350, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void reponse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponse1ActionPerformed
         // TODO add your handling code here:
+     if (click==0){
         message.setText("faux, c'était Nusantara");
         question.setText("quel club de Londres a le plus de premier league ?");
         reponse1.setText("chelsea");
         reponse2.setText("arsenal");
         reponse3.setText("liverpool");
-        reponse4.setText("tottenham");
+        reponse4.setText("tottenham");}
+     if (click==1){
+        message.setText("faux ils sont bons qu'en europe");
+        question.setText("quel club a été champion de top14 2022?");
+        reponse1.setText("Toulouse comme d'habitude");
+        reponse2.setText("Montpellier");
+        reponse3.setText("La rochelle");
+        reponse4.setText("Castres");}
+      if (click==2){
+        message.setText("faux pour une fois");
+        question.setText("d'où sont originaires les cinnamon rolls?");
+        reponse1.setText("Suede");
+        reponse2.setText("France");
+        reponse3.setText("etats unis");
+        reponse4.setText("angleterre");}
+      if (click==3){
+          score=score+1;
+        message.setText("faux ");
+        question.setText("quel pays a pour capitale mascate?");
+        reponse1.setText("chypre");
+        reponse2.setText("France");
+        reponse3.setText("oman");
+        reponse4.setText("eswatini");}
+      if (click==4){
+        message.setText("faux,score:"+score+"/5 ");}
          click++;
     }//GEN-LAST:event_reponse1ActionPerformed
-if click==0:{
+
     private void reponse3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponse3ActionPerformed
         // TODO add your handling code here:
+      if (click==0){
         message.setText("faux, c'était Nusantara");
         question.setText("quel club de Londres a le plus de premier league ?");
         reponse1.setText("chelsea");
         reponse2.setText("arsenal");
         reponse3.setText("liverpool");
-        reponse4.setText("tottenham");
+        reponse4.setText("tottenham");}
+      if (click==1){
+        message.setText("faux c'est pas à Londres");
+        question.setText("quel club a été champion de top14 2022?");
+        reponse1.setText("Toulouse comme d'habitude");
+        reponse2.setText("Montpellier");
+        reponse3.setText("La rochelle");
+        reponse4.setText("Castres");}
+       if (click==2){
+        message.setText("faux ils ont jamais gagné");
+        question.setText("d'où sont originaires les cinnamon rolls?");
+        reponse1.setText("Suede");
+        reponse2.setText("France");
+        reponse3.setText("etats unis");
+        reponse4.setText("angleterre");}
+       if (click==3){
+        message.setText("faux ");
+        question.setText("quel pays a pour capitale mascate?");
+        reponse1.setText("chypre");
+        reponse2.setText("France");
+        reponse3.setText("oman");
+        reponse4.setText("eswatini");}
+       if (click==4){
+           score=score+1;
+        message.setText("vrai,score:"+score+"/5  ");}
         click++;
     }//GEN-LAST:event_reponse3ActionPerformed
 
     private void reponse2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponse2ActionPerformed
-        message.setText("faux, c'était Nusantara");  
-        question.setText("quel club de Londres a le plus de premier league ?");
-        reponse1.setText("chelsea");
-        reponse2.setText("arsenal");
-        reponse3.setText("liverpool");
-        reponse4.setText("tottenham");
-        click++;
+        if (click==0){
+            message.setText("faux, c'était Nusantara");  
+            question.setText("quel club de Londres a le plus de premier league ?");
+            reponse1.setText("chelsea");
+            reponse2.setText("arsenal");
+            reponse3.setText("liverpool");
+            reponse4.setText("tottenham");}
+        if (click==1){
+            score=score+1;
+        message.setText("vrai c'est le meilleur club de la ville");
+        question.setText("quel club a été champion de top14 2022?");
+        reponse1.setText("Toulouse comme d'habitude");
+        reponse2.setText("Montpellier");
+        reponse3.setText("La rochelle");
+        reponse4.setText("Castres");}
+         if (click==2){
+             score=score+1;
+        message.setText("Oui, on l'a fait");
+        question.setText("d'où sont originaires les cinnamon rolls?");
+        reponse1.setText("Suede");
+        reponse2.setText("France");
+        reponse3.setText("etats unis");
+        reponse4.setText("angleterre");}
+         if (click==3){
+        message.setText("faux ");
+        question.setText("quel pays a pour capitale mascate?");
+        reponse1.setText("chypre");
+        reponse2.setText("France");
+        reponse3.setText("oman");
+        reponse4.setText("eswatini");}
+         if (click==4){
+        message.setText("reflechis un peu,score:"+score+"/5  ");}
+            click++;
     }//GEN-LAST:event_reponse2ActionPerformed
 
     private void reponse4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reponse4ActionPerformed
         // TODO add your handling code here:
+      if (click==0){
         message.setText("bonne réponse");
         score=score+1;
         question.setText("quel club de Londres a le plus de premier league ?");
         reponse1.setText("chelsea");
         reponse2.setText("arsenal");
         reponse3.setText("liverpool");
-        reponse4.setText("tottenham");
+        reponse4.setText("tottenham");}
+      if (click==1){
+        message.setText("faux ils sont juste nuls au jeu");
+        question.setText("quel club a été champion de top14 2022?");
+        reponse1.setText("Toulouse comme d'habitude");
+        reponse2.setText("Montpellier");
+        reponse3.setText("La rochelle");
+        reponse4.setText("Castres");}
+       if (click==2){
+        message.setText("faux ils ont perdu en finale");
+        question.setText("d'où sont originaires les cinnamon rolls?");
+        reponse1.setText("Suede");
+        reponse2.setText("France");
+        reponse3.setText("etats unis");
+        reponse4.setText("angleterre");}
+       if (click==3){
+        message.setText("faux ");
+        question.setText("quel pays a pour capitale mascate?");
+        reponse1.setText("chypre");
+        reponse2.setText("France");
+        reponse3.setText("oman");
+        reponse4.setText("eswatini");}
+       if (click==4){
+        message.setText("faux,score:"+score+"/5  ");}
          click++;
     }//GEN-LAST:event_reponse4ActionPerformed
-}
+
+
     /** 
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new NewJFrame().setVisible(true));
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel message;
@@ -160,4 +244,7 @@ if click==0:{
     private javax.swing.JButton reponse3;
     private javax.swing.JButton reponse4;
     // End of variables declaration//GEN-END:variables
+public static void main(String args[]) {
+    java.awt.EventQueue.invokeLater(() -> new NewJFrame().setVisible(true));
+}
 }
