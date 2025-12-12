@@ -7,7 +7,6 @@ package miniprojet_cadenas_nom;
 
 import javax.swing.JOptionPane;
 
-   
  
 
     
@@ -23,7 +22,7 @@ import javax.swing.JOptionPane;
  * @author milob
  */
 public class FenetreCadenas extends javax.swing.JFrame {
-     
+      private int[] digits;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FenetreCadenas.class.getName());
 private CadenasJeu jeu;
   
@@ -273,45 +272,37 @@ private CadenasJeu jeu;
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUp1ActionPerformed
-    int[] digits = null;
      digits[0] = (digits[0] + 1) % 10;
     updateLabels();// TODO add your handling code here:
     }//GEN-LAST:event_btnUp1ActionPerformed
 
     private void btnUp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUp2ActionPerformed
-        int[] digits = null;
         digits[1] = (digits[1] + 1) % 10;
 updateLabels();// TODO add your handling code here:
     }//GEN-LAST:event_btnUp2ActionPerformed
      private void btnUp3ActionPerformed(java.awt.event.ActionEvent evt) {
-        int[] digits = null;
         digits[2] = (digits[2] + 1) % 10;
         updateLabels();
     }
     private void btnUp4ActionPerformed(java.awt.event.ActionEvent evt) {
-        int[] digits = null;
         digits[3] = (digits[3] + 1) % 10;
         updateLabels();
     }
 
     // ----- Boutons − -----
     private void btnDown1ActionPerformed(java.awt.event.ActionEvent evt) {
-        int[] digits = null;
         digits[0] = (digits[0] + 9) % 10;
         updateLabels();
     }
     private void btnDown2ActionPerformed(java.awt.event.ActionEvent evt) {
-        int[] digits = null;
         digits[1] = (digits[1] + 9) % 10;
         updateLabels();
     }
     private void btnDown3ActionPerformed(java.awt.event.ActionEvent evt) {
-        int[] digits = null;
         digits[2] = (digits[2] + 9) % 10;
         updateLabels();
     }
     private void btnDown4ActionPerformed(java.awt.event.ActionEvent evt) {
-        int[] digits = null;
         digits[3] = (digits[3] + 9) % 10;
         updateLabels();
     }
