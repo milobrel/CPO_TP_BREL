@@ -389,6 +389,5 @@ updateLabels();// TODO add your handling code here:
     private javax.swing.JLabel lblTropBas;
     private javax.swing.JLabel lblTropHaut;
     // End of variables declaration//GEN-END:variables
-}
-   
+}   
 
