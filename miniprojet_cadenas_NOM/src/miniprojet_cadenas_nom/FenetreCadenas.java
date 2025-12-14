@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
  * @author milob
  */
 public class FenetreCadenas extends javax.swing.JFrame {
-      private int[] digits;
+     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FenetreCadenas.class.getName());
 private CadenasJeu jeu;
   
@@ -30,10 +30,12 @@ private CadenasJeu jeu;
      * Creates new form FenetreCadenas
      */
     public FenetreCadenas() {
-        initComponents();
-        jeu = new CadenasJeu(10);
-        updateLabels();
-    }
+    initComponents();
+    jeu = new CadenasJeu(10);
+    digits = new int[]{0,0,0,0};   // ✅ AJOUT
+    updateLabels();
+    lblNbEssais.setText("Essais : 0/10");
+}
   private void updateLabels() {
         lblDigit1.setText("" + digits[0]);
         lblDigit2.setText("" + digits[1]);
@@ -131,16 +133,46 @@ private CadenasJeu jeu;
         });
 
         btnUp3.setText("+");
+        btnUp3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUp3ActionPerformed(evt);
+            }
+        });
 
         btnUp4.setText("+");
+        btnUp4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUp4ActionPerformed(evt);
+            }
+        });
 
         btnDown1.setText("-");
+        btnDown1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDown1ActionPerformed(evt);
+            }
+        });
 
         btnDown2.setText("-");
+        btnDown2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDown2ActionPerformed(evt);
+            }
+        });
 
         btnDown3.setText("-");
+        btnDown3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDown3ActionPerformed(evt);
+            }
+        });
 
         btnDown4.setText("-");
+        btnDown4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDown4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -252,7 +284,7 @@ private CadenasJeu jeu;
         lblExact.setText("Exact = " + res.exact);
         lblTropHaut.setText("Trop haut = " + res.tropHaut);
         lblTropBas.setText("Trop bas = " + res.tropBas);
-        lblEssais.setText("Essais : " + jeu.getNbEssaisCourants() + "/" + jeu.getNbEssaisMax());
+        lblNbEssais.setText("Essais : " + jeu.getNbEssaisCourants() + "/" + jeu.getNbEssaisMax());
 
         if (jeu.isPartieTerminee()) {
             JOptionPane.showMessageDialog(this, "Partie terminée !");
@@ -267,8 +299,7 @@ private CadenasJeu jeu;
         lblExact.setText("Exact = 0");
         lblTropHaut.setText("Trop haut = 0");
         lblTropBas.setText("Trop bas = 0");
-        lblEssais.setText("Essais : 0/10");
-    }// TODO add your handling code here:
+        lblNbEssais.setText("Essais : 0/10");// TODO add your handling code here:
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUp1ActionPerformed
@@ -280,32 +311,38 @@ private CadenasJeu jeu;
         digits[1] = (digits[1] + 1) % 10;
 updateLabels();// TODO add your handling code here:
     }//GEN-LAST:event_btnUp2ActionPerformed
-     private void btnUp3ActionPerformed(java.awt.event.ActionEvent evt) {
-        digits[2] = (digits[2] + 1) % 10;
-        updateLabels();
-    }
-    private void btnUp4ActionPerformed(java.awt.event.ActionEvent evt) {
-        digits[3] = (digits[3] + 1) % 10;
-        updateLabels();
-    }
 
-    // ----- Boutons − -----
-    private void btnDown1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnUp3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUp3ActionPerformed
+        digits[2] = (digits[2] + 1) % 10;
+        updateLabels();// TODO add your handling code here:
+    }//GEN-LAST:event_btnUp3ActionPerformed
+
+    private void btnUp4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUp4ActionPerformed
+         digits[3] = (digits[3] + 1) % 10;
+        updateLabels();// TODO add your handling code here:
+    }//GEN-LAST:event_btnUp4ActionPerformed
+
+    private void btnDown1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDown1ActionPerformed
         digits[0] = (digits[0] + 9) % 10;
         updateLabels();
-    }
-    private void btnDown2ActionPerformed(java.awt.event.ActionEvent evt) {
-        digits[1] = (digits[1] + 9) % 10;
-        updateLabels();
-    }
-    private void btnDown3ActionPerformed(java.awt.event.ActionEvent evt) {
+    // TODO add your handling code here:
+    }//GEN-LAST:event_btnDown1ActionPerformed
+
+    private void btnDown2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDown2ActionPerformed
+       digits[1] = (digits[1] + 9) % 10;
+        updateLabels(); // TODO add your handling code here:
+    }//GEN-LAST:event_btnDown2ActionPerformed
+
+    private void btnDown3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDown3ActionPerformed
         digits[2] = (digits[2] + 9) % 10;
-        updateLabels();
-    }
-    private void btnDown4ActionPerformed(java.awt.event.ActionEvent evt) {
-        digits[3] = (digits[3] + 9) % 10;
-        updateLabels();
-    }
+        updateLabels(); // TODO add your handling code here:
+    }//GEN-LAST:event_btnDown3ActionPerformed
+
+    private void btnDown4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDown4ActionPerformed
+         digits[3] = (digits[3] + 9) % 10;
+        updateLabels();// TODO add your handling code here:
+    }//GEN-LAST:event_btnDown4ActionPerformed
+   
 
     /**
      * @param args the command line arguments
@@ -352,6 +389,6 @@ updateLabels();// TODO add your handling code here:
     private javax.swing.JLabel lblTropBas;
     private javax.swing.JLabel lblTropHaut;
     // End of variables declaration//GEN-END:variables
-
+}
    
 
